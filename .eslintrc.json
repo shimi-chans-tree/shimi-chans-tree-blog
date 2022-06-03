@@ -13,7 +13,8 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:storybook/recommended", "next/core-web-vitals"
   ],
   "rules": {
     "no-console": 1,
