@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const X_MICROCMS_API_KEY: string = process.env.X_API_KEY || '';
+const X_MICROCMS_API_KEY: string = process.env.X_MICROCMS_API_KEY || '';
 
 const baseAxios = axios.create({
   headers: {
