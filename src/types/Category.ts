@@ -6,3 +6,7 @@ export interface CategoryType {
   publishedAt: string;
   revisedAt: string;
 }
+
+export interface rootCategoryType {
+  categories: CategoryType;
+}
