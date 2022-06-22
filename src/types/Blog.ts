@@ -10,7 +10,7 @@ export interface BlogItemType {
   revisedAt: string;
   title: string;
   description: string;
-  body: string;
+  content: string;
   eyecatch: ImageType;
   categories: CategoryType[];
 }
