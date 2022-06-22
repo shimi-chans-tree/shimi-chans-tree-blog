@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 /* components */
 import HomeTemplate from '../components/pages/HomeTemplate';
@@ -13,6 +13,7 @@ import { getCategoriesApi } from '../components/apis/CategoryApi';
 import { getProfileByApi } from '../components/apis/ProfileApi';
 import { CategoryType } from '../types/Category';
 import { ProfileType } from 'types/Profile';
+import AppContext from '../contexts/AppContext';
 
 type HomeProps = {
   blogList: BlogItemType[];
@@ -23,7 +24,9 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = (props: HomeProps) => {
   const { blogList, totalCount, categories, profile } = props;
-  const [{ setBlogData, setCategoryData, setProfileData }] = useSetData();
+  const { dispatch } = useContext(AppContext);
+  const [{ setBlogData, setCategoryData, setProfileData }] =
+    useSetData(dispatch);
 
   useEffect(() => {
     setBlogData(blogList, totalCount);
