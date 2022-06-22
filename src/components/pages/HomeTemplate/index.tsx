@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
+/* components */
 import BasePostPageLayout from '../../Layouts/BasePostPageLayout';
 import { BlogItem } from '../../common/molecules/BlogItem';
-import AppContext from '../../../contexts/AppContext';
 import { BlogItemResponsive } from '../../common/molecules/BlogItemResponsive';
+/* contexts */
+import AppContext from '../../../contexts/AppContext';
+
 /* styles */
 import styles from './styles.module.scss';
 
@@ -27,7 +30,6 @@ const HomeTemplate: React.FC = () => {
         {blogList &&
           blogList.length > 0 &&
           blogList.map((blogItem: BlogItemType, index: number) => (
-            // <></>
             <BlogItemResponsive
               key={`${blogItem.id}_${index}`}
               blogItem={blogItem}
