@@ -1,0 +1,25 @@
+@import '../../../../styles//variable.scss';
+
+.container {
+  display: flex;
+}
+
+.icon {
+  display: block;
+  padding-right: 4px;
+}
+
+.date {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  line-height: 18px;
+
+  @include mq(lg) {
+    font-size: 1rem;
+  }
+
+  @include mq(md) {
+    font-size: 0.625rem;
+  }
+}
