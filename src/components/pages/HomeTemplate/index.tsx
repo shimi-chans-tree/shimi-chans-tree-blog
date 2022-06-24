@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import BasePostPageLayout from '../../Layouts/BasePostPageLayout';
 import { BlogItem } from '../../common/molecules/BlogItem';
 import { BlogItemResponsive } from '../../common/molecules/BlogItemResponsive';
+import { Pagination } from '../../common/molecules/Pagination';
 /* contexts */
 import AppContext from '../../../contexts/AppContext';
 
@@ -11,10 +12,11 @@ import styles from './styles.module.scss';
 
 /* types */
 import { BlogItemType } from '../../../types/Blog';
+import { BLOG_SHOW_COUNT } from '../../../constants/config';
 
 const HomeTemplate: React.FC = () => {
   const { state } = useContext(AppContext);
-  const { blogList } = state.blogItem;
+  const { blogList, totalCount } = state.blogItem;
 
   return (
     <BasePostPageLayout>
@@ -36,6 +38,9 @@ const HomeTemplate: React.FC = () => {
             />
           ))}
       </div>
+      {totalCount / BLOG_SHOW_COUNT > 1 && (
+        <Pagination totalCount={totalCount} link="/page/" />
+      )}
     </BasePostPageLayout>
   );
 };
