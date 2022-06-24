@@ -5,15 +5,15 @@ import HomeTemplate from '../components/pages/HomeTemplate';
 /* hooks */
 import { useSetData } from '../hooks/useSetData';
 /* apis */
-import { getBlogsApi } from '../components/apis/BlogApi';
-
+import { getBlogsApi } from '../apis/BlogApi';
+/* context */
+import AppContext from '../contexts/AppContext';
 /* types */
 import { BlogItemType } from '../types/Blog';
-import { getCategoriesApi } from '../components/apis/CategoryApi';
-import { getProfileByApi } from '../components/apis/ProfileApi';
+import { getCategoriesApi } from '../apis/CategoryApi';
+import { getProfileByApi } from '../apis/ProfileApi';
 import { CategoryType } from '../types/Category';
 import { ProfileType } from 'types/Profile';
-import AppContext from '../contexts/AppContext';
 
 type HomeProps = {
   blogList: BlogItemType[];
