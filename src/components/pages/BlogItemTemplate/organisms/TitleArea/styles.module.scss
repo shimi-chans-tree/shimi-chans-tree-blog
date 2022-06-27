@@ -1,0 +1,73 @@
+@import '../../../../../styles/variable.scss';
+
+.container {
+  margin-bottom: 24px;
+}
+
+.title {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 3rem;
+  letter-spacing: 0.1em;
+  color: var(--c-main);
+  border-bottom: 1px solid;
+
+  @include mq(lg) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 4px;
+  }
+}
+
+.category {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq(md) {
+    margin-top: 2px;
+  }
+
+  &__item {
+    cursor: pointer;
+    margin-right: 16px;
+    padding: 4px 12px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--c-point);
+    border: 2px solid var(--c-point);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background 0.5s;
+
+    &:hover {
+      color: #fff;
+      background: var(--c-point);
+      transition: background 1s;
+    }
+
+    @include mq(lg) {
+      font-size: 1rem;
+      border: 2px solid var(--c-point);
+      border-radius: 8px;
+      padding: 10px 16px;
+    }
+
+    @include mq(md) {
+      font-size: 0.75rem;
+      line-height: 1.5rem;
+      padding: 0px 8px;
+    }
+  }
+}
+
+.date {
+  margin-top: 4px;
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}

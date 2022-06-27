@@ -1,0 +1,21 @@
+@import '../../../../styles/variable.scss';
+
+.container {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 15px;
+  top: 7px;
+
+  @include mq(lg) {
+    right: 15px;
+    top: 8px;
+  }
+
+  @include mq(md) {
+    right: 15px;
+    top: 9px;
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../../../styles/variable.scss';
+
+.title {
+  margin-bottom: 48px;
+
+  @include mq(xl) {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--c-main);
+    letter-spacing: 0.1em;
+
+    @include mq(xl) {
+      font-size: 1rem;
+    }
+
+    @include mq(md) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__border {
+    display: block;
+    margin-top: 12px;
+    border: 1px solid var(--c-sub);
+    width: 100%;
+    height: 1px;
+  }
+}

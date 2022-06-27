@@ -1,0 +1,46 @@
+@import '../../../../styles/variable.scss';
+
+.container {
+  padding: 16px 10px;
+
+  @include mq(md) {
+    padding: 4px 5px;
+  }
+}
+
+.list {
+  display: inline-block;
+}
+
+.category {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  user-select: none;
+  line-height: 1rem;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 0.875rem;
+  border-radius: 20px;
+  background: var(--c-sub);
+  color: var(--c-main);
+  margin: 8px;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+  transition: background 0.1s;
+
+  @include mq(xl) {
+    font-size: 1rem;
+    padding: 0.875rem 1rem;
+  }
+
+  @include mq(md) {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+  }
+
+  &:hover {
+    background: var(--c-main);
+    color: var(--c-sub);
+    transition: background 1s;
+  }
+}
