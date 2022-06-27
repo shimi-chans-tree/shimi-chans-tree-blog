@@ -1,9 +1,9 @@
 /* apis */
-import { getCategoriesApi } from './CategoryApi';
+import { getCategoriesApi } from '../../apis/CategoryApi';
 /* constants */
-import { initCategoryData } from '../constants/initState';
+import { initCategoryData } from '../../constants/initState';
 /* types */
-import { CategoryType } from '../types/Category';
+import { CategoryType } from '../../types/Category';
 
 describe('【Api】CategoryApi test', () => {
   let categoryData: CategoryType;
