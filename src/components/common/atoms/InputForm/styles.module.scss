@@ -1,0 +1,30 @@
+@import '../../../../styles//variable.scss';
+
+.input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  color: var(--c-main);
+  border: 1px solid var(--c-main);
+  border-radius: 1px;
+  box-sizing: border-box;
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  background: #fff;
+
+  @include mq(xl) {
+    height: 50px;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    padding: 4px 16px;
+  }
+
+  @include mq(md) {
+    font-size: 1rem;
+    height: 40px;
+  }
+}
+
+.input::placeholder {
+  color: #c9d0d9;
+}
