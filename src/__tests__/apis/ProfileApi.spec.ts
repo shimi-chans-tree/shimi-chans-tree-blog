@@ -1,9 +1,9 @@
 /* apis */
-import { getProfileByApi } from './ProfileApi';
+import { getProfileByApi } from '../../apis/ProfileApi';
 /* constants */
-import { initProfileState } from '../constants/initState';
+import { initProfileState } from '../../constants/initState';
 /* types */
-import { ProfileType } from '../types/Profile';
+import { ProfileType } from '../../types/Profile';
 
 describe('[Api] getProfileByApi test', () => {
   let profileData: ProfileType;
