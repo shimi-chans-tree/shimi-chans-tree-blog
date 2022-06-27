@@ -16,12 +16,6 @@ const Header: NextPage = () => {
             <p>〜小さな積み上げがいつか大樹に〜</p>
           </div>
         </Link>
-        {/* リンク */}
-        <div className={styles.link}>
-          <Link href="">
-            <h2 data-test-id="profile-header-link">プロフィール</h2>
-          </Link>
-        </div>
       </div>
     </div>
   );

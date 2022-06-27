@@ -24,8 +24,6 @@ const BlogItemTemplate: React.FC<Props> = (props: Props) => {
     <BasePostPageLayout>
       <section className={styles.container}>
         <main className={styles.main}>
-          <div className={styles.leftBar}></div>
-
           <div className={styles.rightBar}>
             {/* ブログタイトルエリア */}
             <TitleArea blogItem={blogItem} />
