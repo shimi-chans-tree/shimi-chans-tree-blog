@@ -1,7 +1,7 @@
-import { getBlogsApi, getBlogByApi } from './BlogApi';
-import { initBlogItem, initBlogData } from '../constants/initState';
+import { getBlogsApi, getBlogByApi } from '../../apis/BlogApi';
+import { initBlogItem, initBlogData } from '../../constants/initState';
 
-describe('【Api】blogApi test', () => {
+describe('[Api]blogApi test', () => {
   let blogItem: any;
   let blogItemList: any;
 
