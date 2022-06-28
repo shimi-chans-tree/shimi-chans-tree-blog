@@ -6,6 +6,9 @@ on:
 
 env:
   FILE_PATTERN: 'src/**/*.{ts,tsx,js,jsx}'
+  X_MICROCMS_API_KEY: ${{ secrets.X_API_KEY }}
+  NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+  NEXT_PUBLIC_BLOG_SHOW_COUNT: ${{ secrets.NEXT_PUBLIC_BLOG_SHOW_COUNT }}
 
 jobs:
   build:
@@ -38,6 +41,10 @@ jobs:
         # jest
       - name: Jest
         run: yarn test
+
+        # build
+      - name: Build
+        run: yarn build
 
         # e2e test
       - name: Cypress
