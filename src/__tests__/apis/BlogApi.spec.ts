@@ -39,16 +39,18 @@ describe('[Api]blogApi test', () => {
   describe('[function]getBlogByApi', () => {
     const apiMock = jest.fn(getBlogByApi);
     const id = 'test';
+    const draftkey = 'test_draft_key';
+
     test('正しくデータが取得できること', async () => {
       const apiMockFunc = apiMock.mockResolvedValue(blogItem);
-      expect(await apiMockFunc(id)).toEqual(blogItem);
+      expect(await apiMockFunc(id, draftkey)).toEqual(blogItem);
     });
 
     test('例外が発生すること。', async () => {
       const apiMockFunc = apiMock.mockReturnValue(Promise.reject('error'));
 
       try {
-        await apiMockFunc(id);
+        await apiMockFunc(id, draftkey);
       } catch (error) {
         expect(error).toMatch('error');
       }

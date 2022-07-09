@@ -27,10 +27,12 @@ export const getBlogsApi = async (offset: number) => {
   return blogData;
 };
 
-export const getBlogByApi = async (id: string) => {
+export const getBlogByApi = async (id: string, draftKey: string) => {
   let blogDetail = initBlogItem;
   try {
-    const res = await baseAxios.get(`${BASE_URL}/${id}`);
+    const res = await baseAxios.get(
+      `${BASE_URL}/${id}${draftKey !== '' ? `?draftKey=${draftKey}` : ''}`
+    );
     blogDetail = res.data;
   } catch (error) {
     console.log(error); // eslint-disable-line no-console

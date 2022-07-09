@@ -21,12 +21,17 @@ type BlogItemPageProps = {
   highlightedBody: string;
   categories: CategoryType;
   profile: ProfileType;
+  draftKey: string;
 };
 
 const Home: NextPage<BlogItemPageProps> = (props) => {
-  const { blogItem, highlightedBody } = props;
+  const { blogItem, highlightedBody, draftKey } = props;
   return (
-    <BlogItemTemplate blogItem={blogItem} highlightedBody={highlightedBody} />
+    <BlogItemTemplate
+      blogItem={blogItem}
+      highlightedBody={highlightedBody}
+      draftKey={draftKey}
+    />
   );
 };
 
@@ -47,14 +52,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { params } = context;
+  const { params, previewData } = context;
 
   let blogId = '';
+  let draftKey = '';
 
   if (!params?.blogId) {
     throw new Error('Error: ID not found');
@@ -64,9 +70,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
     blogId = params.blogId;
   }
 
+  const isDraft = (item: any): item is { draftKey: string } =>
+    !!(item?.draftKey && typeof item.draftKey === 'string');
+
+  if (isDraft(previewData)) {
+    draftKey = previewData.draftKey;
+  }
+
   try {
     // ブログ記事詳細データ取得 ---------
-    const blogDetailData = await getBlogByApi(blogId);
+    const blogDetailData = await getBlogByApi(blogId, draftKey);
     // カテゴリーデータ取得 ---------
     const categoryData = await getCategoriesApi();
 
@@ -86,6 +99,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       highlightedBody: $.html(),
       categories: categoryData,
       profile: profile,
+      draftKey: draftKey,
     };
     return { props };
   } catch (error) {
