@@ -12,6 +12,8 @@ import { BLOG_SHOW_COUNT } from '../../../constants/config';
 /* styles */
 import styles from './styles.module.scss';
 import { BlogItemType } from 'types/Blog';
+/* hooks */
+import { useMeta } from 'hooks/useMeta';
 
 /**
  * props
@@ -28,8 +30,10 @@ export const CategoryTemplate: React.FC<Props> = (props: Props) => {
   const { state } = useContext(AppContext);
   const { blogList, totalCount } = state.blogItem;
 
+  const [{ metaData }] = useMeta({ title: breadName });
+
   return (
-    <BasePostPageLayout>
+    <BasePostPageLayout metaData={metaData}>
       {/* ページタイトル */}
       <PageTitle title={`「${breadName}」の記事一覧`} />
 

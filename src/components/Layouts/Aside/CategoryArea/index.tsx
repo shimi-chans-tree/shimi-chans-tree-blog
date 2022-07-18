@@ -29,7 +29,10 @@ export const CategoryArea: React.FC = () => {
               return (
                 <li className={styles.list} key={`${category.id}_${index}`}>
                   <Link href={`/category/${category.id}/1`}>
-                    <div className={styles.category}>
+                    <div
+                      className={styles.category}
+                      data-test-id="category-link"
+                    >
                       <span>{category.name}</span>
                     </div>
                   </Link>

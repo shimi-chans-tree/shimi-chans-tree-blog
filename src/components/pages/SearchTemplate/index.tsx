@@ -9,6 +9,7 @@ import AppContext from '../../../contexts/AppContext';
 
 /* hooks */
 import { useSearchTemplate } from '../../../hooks/useSearchTemplate';
+import { useMeta } from 'hooks/useMeta';
 /* styles*/
 import styles from './styles.module.scss';
 import { BlogItemType } from 'types/Blog';
@@ -20,15 +21,18 @@ type Props = {
   breadName: string;
 };
 
-export const SearchTemplate: React.FC<Props> = () => {
+export const SearchTemplate: React.FC<Props> = (props) => {
+  const { breadName } = props;
   const { state } = useContext(AppContext);
   const { blogList } = state.blogItem;
   /* hooks */
 
   const [states, actions] = useSearchTemplate(blogList);
 
+  const [{ metaData }] = useMeta({ title: breadName });
+
   return (
-    <BaseLayout>
+    <BaseLayout metaData={metaData}>
       <div className={styles.container}>
         <PageTitle title="検索結果" />
         {/* 検索フォーム */}

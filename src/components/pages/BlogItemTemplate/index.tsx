@@ -8,6 +8,8 @@ import { HighlightBody } from '../../../components/common/molecules/HighlightBod
 import { BlogItemType } from '../../../types/Blog';
 /* styles */
 import styles from './styles.module.scss';
+/* hooks */
+import { useMeta } from '../../../hooks/useMeta';
 
 /**
  * props
@@ -21,8 +23,16 @@ type Props = {
 const BlogItemTemplate: React.FC<Props> = (props: Props) => {
   /* props */
   const { blogItem, highlightedBody, draftKey } = props;
+
+  /* hooks */
+  const [{ metaData }] = useMeta({
+    title: blogItem.title,
+    description: blogItem.description,
+    imagePath: blogItem.eyecatch.url,
+  });
+
   return (
-    <BasePostPageLayout>
+    <BasePostPageLayout metaData={metaData}>
       <section className={styles.container}>
         {!!draftKey && (
           <div>
