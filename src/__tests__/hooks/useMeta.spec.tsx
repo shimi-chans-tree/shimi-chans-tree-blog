@@ -35,10 +35,10 @@ describe('[Hook]useMetaData test', () => {
     });
     test('metaDataを取得できること', () => {
       const expectObject: MetaHeadType = {
-        title: 'test title',
-        description: 'test description',
+        title: 'Test Title',
+        description: 'Test Description',
         keyword: METADATA_KEYWORD.BASIC,
-        image: 'test.png',
+        image: 'Test.png',
         url: 'http://test.com',
       };
 
