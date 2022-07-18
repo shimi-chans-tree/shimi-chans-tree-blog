@@ -13,13 +13,17 @@ import styles from './styles.module.scss';
 /* types */
 import { BlogItemType } from '../../../types/Blog';
 import { BLOG_SHOW_COUNT } from '../../../constants/config';
+/* hooks */
+import { useMeta } from 'hooks/useMeta';
 
 const HomeTemplate: React.FC = () => {
   const { state } = useContext(AppContext);
   const { blogList, totalCount } = state.blogItem;
 
+  const [{ metaData }] = useMeta({});
+
   return (
-    <BasePostPageLayout>
+    <BasePostPageLayout metaData={metaData}>
       <div className={styles.blogItem}>
         {blogList &&
           blogList.length > 0 &&
