@@ -23,6 +23,7 @@ type Props = {
 const BlogItemTemplate: React.FC<Props> = (props: Props) => {
   /* props */
   const { blogItem, highlightedBody, draftKey } = props;
+
   /* hooks */
   const [{ metaData }] = useMeta({
     title: blogItem.title,
