@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Image from 'next/image';
 /* components */
 import { BasicAsidePartsArea } from '../BasicAsidePartsArea';
-import { AiFillTwitterCircle, AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 /* contexts */
 import AppContext from '../../../../contexts/AppContext';
 
@@ -45,15 +45,6 @@ export const ProfileArea: React.FC = () => {
 
           {/* SNSアイコンボタン */}
           <ul className={styles.sns}>
-            <li className={styles.sns__icon}>
-              <a
-                target="_blank"
-                href={profile.twitter}
-                rel="noopener noreferrer"
-              >
-                <AiFillTwitterCircle size={48} />
-              </a>
-            </li>
             <li className={styles.sns__icon}>
               <a
                 target="_blank"

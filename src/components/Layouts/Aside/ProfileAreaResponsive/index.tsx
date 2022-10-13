@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Image from 'next/image';
 /* components */
 import { BasicAsidePartsArea } from '../BasicAsidePartsArea';
-import { AiFillTwitterCircle, AiFillGithub } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 /* styles */
 import styles from './styles.module.scss';
 import AppContext from 'contexts/AppContext';
@@ -39,15 +39,6 @@ export const ProfileAreaResponsive: React.FC = () => {
 
           {/* SNSアイコンボタン */}
           <ul className={styles.sns}>
-            <li className={styles.sns__icon}>
-              <a
-                target="_blank"
-                href={profile.twitter}
-                rel="noopener noreferrer"
-              >
-                <AiFillTwitterCircle size={48} />
-              </a>
-            </li>
             <li className={styles.sns__icon}>
               <a
                 target="_blank"
